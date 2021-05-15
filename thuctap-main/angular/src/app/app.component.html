@@ -1,0 +1,34 @@
+<mat-toolbar color="primary" class="nav-height">
+  <mat-toolbar-row>
+
+    <h1>Quản lý sản phẩm </h1>
+    <span class="menu-spacer" style="width: 100px;"></span>
+    <div>
+      <a mat-button [routerLink]="['/home']" [routerLinkActive]="'active-link'">
+        <mat-icon mat-list-icon>home</mat-icon> HOME
+      </a>
+      <a mat-button [routerLink]="['/watches']" [routerLinkActive]="'active-link'">
+        <mat-icon>folder_shared</mat-icon> Danh sách sản phẩm
+        <span *ngIf="totalStudents > 0" matBadge="{{ totalStudents }}" matBadgeColor="warn" matBadgeSize="small">
+          Danh sách sản phẩm &nbsp;
+        </span>
+      </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+
+  <mat-sidenav-content>
+    <div style="
+        height: 90vh;
+        margin-top: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+      " [ngClass]="{
+        'content-move-left': !isOpened,
+        'content-move-right': isOpened
+      }">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,36 @@
+<div>
+    <button mat-raised-button color="primary" (click)="addWatch()">
+        <mat-icon>add_box</mat-icon>
+        Thêm sản phẩm
+    </button>
+    <table id="customers" style="border-collapse: collapse;">
+        <tr>
+            <th>Hành động</th>
+            <th>
+                Mã sản phẩm
+            </th>
+            <th>Tên</th>
+            <th>Loaị</th>
+            <th>Giá tiền</th>
+            <th>Hình</th>
+        </tr>
+        <tr *ngFor="let watch of watches">
+            <td>
+                <mat-icon style="cursor: pointer;" title="Nhấn vào để xóa" (click)="deleteWatch(watch._id)">
+                    clear
+                </mat-icon>
+                &nbsp;
+                <mat-icon style="cursor: pointer;" title="Nhấn vào để soạn" (click)="editWatch(watch._id)">
+                    create
+                </mat-icon>
+            </td>
+            <td>{{ watch._id }}</td>
+            <td>{{ watch.name }}</td>
+            <td>{{ watch.type }}</td>
+            <td>{{ watch.price }}</td>
+            <td>
+                <img [src]=" watch.img " height="50" />
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,35 @@
+<h1 style="text-align: center;">
+  Chào mừng đến với Angular 9 !
+</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      <div class="row mt-2">
+        <div *ngFor="let watch of watches" class="col-lg-4 col-md-6 mb-4" style="    margin-top: 20px;">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" style="width: 100%;" [src]="watch.img" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{watch.name}}</a>
+              </h4>
+              <div class="" style="    display: flex;
+              justify-content: space-between;">
+                <h5 class="text-left">{{watch.price}}</h5>
+                <h5 class="text-right">{{watch.type}}</h5>
+
+              </div>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                aspernatur!
+              </p>
+              <a type="submit" class="btn btn-primary mt-3">Thêm vào giỏ hàng</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Form sản phẩm</h1>
+    <form [formGroup]="watchForm">
+        <mat-form-field class="form-header">
+            <mat-label>Tên sản phẩm</mat-label>
+            <input matInput placeholder="" formControlName="name" require />
+        </mat-form-field>
+        <!--  
+      <span *ngIf="profileForm.controls.code.invalid" class="errorMessage">
+        * Cần phải nhập mã sinh viên
+      </span> -->
+        <mat-form-field class="form-header">
+            <mat-label>Loại</mat-label>
+            <input matInput placeholder="" formControlName="type" require />
+        </mat-form-field>
+        <mat-form-field class="form-header">
+            <mat-label>Giá</mat-label>
+            <input matInput placeholder="" formControlName="price" require />
+        </mat-form-field>
+
+        <mat-form-field class="form-header">
+            <mat-label>Hình</mat-label>
+            <input matInput placeholder="" formControlName="img" require />
+        </mat-form-field>
+        <br />
+        <button type="submit" class="btn btn-success" [disabled]="!watchForm.valid" (click)="saveAndGotoList()">
+            Lưu và trở về danh sách
+        </button>
+        &nbsp;
+        <button type="submit" class="btn btn-success" [disabled]="!watchForm.valid" (click)="save()">
+            Lưu <span *ngIf="id === 0">và nhập mới</span>
+        </button>
+        &nbsp;
+    </form>
+</div>
